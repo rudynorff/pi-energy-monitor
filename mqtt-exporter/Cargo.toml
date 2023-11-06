@@ -1,0 +1,9 @@
+[package]
+name = "mqtt-exporter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+rumqttc = "0.23.0"
+rusqlite = { version = "*", features = ["bundled"] }
