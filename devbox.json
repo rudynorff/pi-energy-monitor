@@ -1,0 +1,19 @@
+{
+  "packages": [
+    "cargo@latest",
+    "rustc@latest",
+    "mosquitto@latest",
+    "libiconvReal@latest",
+    "darwin.apple_sdk.frameworks.Security"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!'"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}

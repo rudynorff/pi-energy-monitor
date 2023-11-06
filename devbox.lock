@@ -1,0 +1,90 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "cargo@latest": {
+      "last_modified": "2023-09-27T18:02:17Z",
+      "resolved": "github:NixOS/nixpkgs/517501bcf14ae6ec47efd6a17dda0ca8e6d866f9#cargo",
+      "source": "devbox-search",
+      "version": "1.72.0",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/8mdcavvgk4jf5blq6mspls97iki29l38-cargo-1.72.0"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/6ki98dyzaq54nbpcwrald7ji8n37vhai-cargo-1.72.0"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/i59ad991wh2xi7fy3dq6ncjra7pv3rcm-cargo-1.72.0"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/9vxskkmmmqh2r72x63g2rr7vf93da577-cargo-1.72.0"
+        }
+      }
+    },
+    "darwin.apple_sdk.frameworks.Security": {
+      "resolved": "github:NixOS/nixpkgs/f80ac848e3d6f0c12c52758c0f25c10c97ca3b62#darwin.apple_sdk.frameworks.Security",
+      "source": "nixpkg"
+    },
+    "libiconvReal@latest": {
+      "last_modified": "2023-10-25T20:49:13Z",
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#libiconvReal",
+      "source": "devbox-search",
+      "version": "1.16",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/6i2l88gvypzy0gwipahss34n5wph7ncf-libiconv-1.16"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/f3c6vbl064w8kfrapxkx3lf08z114lqa-libiconv-1.16"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/w7dx9hy8gnwh1chlgdxffaqzc5sg1i6f-libiconv-1.16"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/y9k91ql59gzzr6chqyc9i8r40brwc3ic-libiconv-1.16"
+        }
+      }
+    },
+    "mosquitto@latest": {
+      "last_modified": "2023-10-25T20:49:13Z",
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#mosquitto",
+      "source": "devbox-search",
+      "version": "2.0.17",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/1bx9gykwp49jz4szsc1mg71sanvikj5k-mosquitto-2.0.17"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/j9zw7j9v02wwycms38wi81afmva665cb-mosquitto-2.0.17"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/zrlgiiskz15dcj565l4v32rgazl961jl-mosquitto-2.0.17"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/43z7cs7xp6p1a672pbh64qpp0si3y49a-mosquitto-2.0.17"
+        }
+      }
+    },
+    "rustc@latest": {
+      "last_modified": "2023-09-27T18:02:17Z",
+      "plugin_version": "0.0.1",
+      "resolved": "github:NixOS/nixpkgs/517501bcf14ae6ec47efd6a17dda0ca8e6d866f9#rustc",
+      "source": "devbox-search",
+      "version": "1.72.0",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/s71dj54b3q0594sis3vp4hl2mdbnn6p3-rustc-1.72.0"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/3i3bzwmp6hgzvid68kzm4f8299aw7942-rustc-1.72.0"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/v4hscpsdfzsnm6vgxb0rc0hfkilnk81d-rustc-1.72.0"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/y80wqhgx2x0gndpy1xxbfx6pmqcg4m84-rustc-1.72.0"
+        }
+      }
+    }
+  }
+}
