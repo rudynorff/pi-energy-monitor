@@ -1,6 +1,7 @@
 [Unit]
 Description=Takes logged energy data from MQTT and logs it to a sqlite DB
-After=network.target
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 ExecStart=/usr/bin/mqtt-exporter
