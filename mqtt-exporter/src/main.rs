@@ -11,7 +11,7 @@ async fn main() {
 
     let conn = Connection::open("./telemetry.sqlite").unwrap();
     conn.execute(
-        "CREATE TABLE IF NOT EXISTS telemetry (id INTEGER PRIMARY KEY, device_id INTEGER NOT NULL, power INTEGER NOT NULL, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)",
+        "CREATE TABLE IF NOT EXISTS telemetry (id INTEGER PRIMARY KEY, device_id INTEGER NOT NULL, value INTEGER NOT NULL, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)",
         (),
     ).unwrap();
     conn.execute(
@@ -47,7 +47,7 @@ async fn main() {
 
                 println!("Incoming = {:?}, {:?}", p.topic, payload);
                 conn.execute(
-                    "INSERT INTO telemetry (device_id, power) VALUES (?1, ?2)",
+                    "INSERT INTO telemetry (device_id, value) VALUES (?1, ?2)",
                     (&device_id, payload),
                 ).unwrap();
             },

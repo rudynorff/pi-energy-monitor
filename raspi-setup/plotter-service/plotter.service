@@ -1,0 +1,11 @@
+[Unit]
+Description=Plots the data from a sqlite telemetry database every x minutes into an html page
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/plotter.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
