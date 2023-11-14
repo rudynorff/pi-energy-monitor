@@ -1,6 +1,6 @@
 use std::str;
 use std::time::Duration;
-use tokio;
+use tokio::time::sleep;
 use rumqttc::{MqttOptions, AsyncClient, QoS, Outgoing, Event, Packet};
 use rusqlite::Connection;
 
@@ -34,6 +34,8 @@ async fn main() {
     let (client, mut eventloop) = AsyncClient::new(mqttoptions, 10);
     client.subscribe(solar, QoS::AtMostOnce).await.unwrap();
 
+    let mut err_counter: i8 = 0;
+
     loop {
         match eventloop.poll().await {
             Ok(Event::Incoming(Packet::Publish(p))) => {
@@ -56,6 +58,12 @@ async fn main() {
             Ok(Event::Incoming(_i)) => {},
             Ok(Event::Outgoing(_o)) => {},
             Err(e) => {
+                if err_counter == 3  {
+                    panic!("Too many error retries");
+                }
+                err_counter += 1;
+                sleep(tokio::time::Duration::from_millis(3000)).await;
+
                 println!("Error = {:?}\nRECONNECTING...\n\n", e);
                 client.subscribe(solar, QoS::AtMostOnce).await.unwrap();
             }
