@@ -5,8 +5,37 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Energy Stats</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 </head>
 <body>
+    <div class="ct-chart ct-golden-section" id="chart-day-by-hour"></div>
     
+
+    <script>
+        function convertSQLToChartData(rawData) {
+            if (!rawData) {
+                return {};
+            }
+
+            const records = rawData.split(';');
+            const labels = records.map((record) => {
+                return record.split('|')[0];
+            });
+            const solarSeries = records.map((record) => {
+                return record.split('|')[1];
+            });
+
+            return {
+                labels,
+                series: [solarSeries],
+            };
+        }
+
+        const graphOfDayByHourRawData = '_GRAPH_OF_DAY_BY_HOUR_';
+        const graphOfDayByHour = convertSQLToChartData(graphOfDayByHourRawData);
+        new Chartist.Line('#chart-day-by-hour', graphOfDayByHour);
+    </script>
 </body>
 </html>

@@ -25,6 +25,26 @@
       "resolved": "github:NixOS/nixpkgs/f80ac848e3d6f0c12c52758c0f25c10c97ca3b62#darwin.apple_sdk.frameworks.Security",
       "source": "nixpkg"
     },
+    "gnuplot@latest": {
+      "last_modified": "2023-10-25T20:49:13Z",
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#gnuplot",
+      "source": "devbox-search",
+      "version": "5.4.9",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/j7vaf1bghckpflkyir9vhk7ijkk7nbik-gnuplot-5.4.9"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/p11w3zm1h1g5ilgnk5h3kmvv9krrw31w-gnuplot-5.4.9"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/yf0ppjjczqm61wy3fh7cc8nnwhl42p4n-gnuplot-5.4.9"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/anr74f3l7shw30k43j0s9h26kgc8ph2q-gnuplot-5.4.9"
+        }
+      }
+    },
     "libiconvReal@latest": {
       "last_modified": "2023-10-25T20:49:13Z",
       "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#libiconvReal",

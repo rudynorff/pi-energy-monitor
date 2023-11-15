@@ -19,11 +19,15 @@ async fn main() {
         (),
     ).unwrap();
     conn.execute(
-        "INSERT OR IGNORE INTO devices (id, name) VALUES (1, 'grid')",
+        "INSERT OR IGNORE INTO devices (id, name) VALUES (1, 'power-grid')",
         (),
     ).unwrap();
     conn.execute(
         "INSERT OR IGNORE INTO devices (id, name) VALUES (2, 'shellies/solar')",
+        (),
+    ).unwrap();
+    conn.execute(
+        "INSERT OR IGNORE INTO devices (id, name) VALUES (3, 'gas')",
         (),
     ).unwrap();
 

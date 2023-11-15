@@ -4,7 +4,8 @@
     "rustc@latest",
     "mosquitto@latest",
     "libiconvReal@latest",
-    "darwin.apple_sdk.frameworks.Security"
+    "darwin.apple_sdk.frameworks.Security",
+    "gnuplot@latest"
   ],
   "shell": {
     "init_hook": [
