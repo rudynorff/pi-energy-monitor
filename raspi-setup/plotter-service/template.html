@@ -10,7 +10,16 @@
     <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 </head>
 <body>
+    <h1>Norff House</h1>
+
+    <h3>Current Day in Hours</h3>
     <div class="ct-chart ct-golden-section" id="chart-day-by-hour"></div>
+
+    <h3>Last 7 Days</h3>
+    <div class="ct-chart ct-golden-section" id="chart-last-7-days"></div>
+
+    <h3>Last Full Week</h3>
+    <div class="ct-chart ct-golden-section" id="chart-last-full-week"></div>
     
 
     <script>
@@ -36,6 +45,14 @@
         const graphOfDayByHourRawData = '_GRAPH_OF_DAY_BY_HOUR_';
         const graphOfDayByHour = convertSQLToChartData(graphOfDayByHourRawData);
         new Chartist.Line('#chart-day-by-hour', graphOfDayByHour);
+
+        const graphOfLast7DaysByDayRawData = '_GRAPH_OF_LAST_7_DAYS_BY_DAY_';
+        const graphOfLast7DaysByDay = convertSQLToChartData(graphOfLast7DaysByDayRawData);
+        new Chartist.Line('#chart-last-7-days', graphOfLast7DaysByDay);
+
+        const graphOfLastFullWeekDaysRawData = '_GRAPH_OF_LAST_FULL_WEEKDAYS_';
+        const graphOfLastFullWeekDays = convertSQLToChartData(graphOfLastFullWeekDaysRawData);
+        new Chartist.Line('#chart-last-full-week', graphOfLastFullWeekDays);
     </script>
 </body>
 </html>
