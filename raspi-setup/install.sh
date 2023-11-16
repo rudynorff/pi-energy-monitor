@@ -25,12 +25,15 @@ cargo build --release
 sudo cp ./target/release/mqtt-exporter /usr/bin
 cd ../../raspi-setup/
 sudo cp ./mqtt-exporter.service /etc/systemd/system/
-sudo systemctl enable mqtt-exporter.service
 
-# TODO ADD shell script to cron that grabs sqlite every 5 minutes and uses gnuplot (or alike)
 echo "Install and start plotter that creates graphs and shows them as a website"
+cd plotter-service/
+sudo cp ./plotter.sh /usr/bin/
+sudo cp ./plotter.service /etc/systemd/system/
 
 echo "Start services without restarting the system"
+sudo systemctl enable mqtt-exporter.service
+sudo systemctl enable plotter.service
 sudo systemctl daemon-reload
 sudo systemctl start mosquitto
 sudo systemctl start mqtt-exporter.service

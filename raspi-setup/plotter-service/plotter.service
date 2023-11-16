@@ -4,8 +4,10 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-ExecStart=/usr/bin/plotter.sh
 Restart=always
+RestartSec=300s
+ExecStart=/bin/bash /usr/bin/plotter.sh
 
 [Install]
 WantedBy=multi-user.target
+
