@@ -15,7 +15,7 @@ echo "Enabling MosQuiTTo on system start"
 sudo touch /etc/mosquitto/conf.d/local.conf
 sudo echo "listener 1883" >> /etc/mosquitto/conf.d/local.conf
 sudo echo "allow_anonymous true" >> /etc/mosquitto/conf.d/local.conf
-sudo systemctl enable mosquitto
+
 
 echo "Compile and install mqtt-exporter"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -33,6 +33,7 @@ sudo cp ./plotter.sh /usr/bin/
 sudo cp ./plotter.service /etc/systemd/system/
 
 echo "Start services without restarting the system"
+sudo systemctl enable mosquitto
 sudo systemctl enable mqtt-exporter.service
 sudo systemctl enable plotter.service
 sudo systemctl daemon-reload
