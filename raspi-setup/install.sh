@@ -28,6 +28,7 @@ sudo cp ./mqtt-exporter.service /etc/systemd/system/
 
 echo "Install and start plotter that creates graphs and shows them as a website"
 cd plotter-service/
+sudo cp ./template.html /
 sudo cp ./plotter.sh /usr/bin/
 sudo cp ./plotter.service /etc/systemd/system/
 
@@ -37,5 +38,5 @@ sudo systemctl enable plotter.service
 sudo systemctl daemon-reload
 sudo systemctl start mosquitto
 sudo systemctl start mqtt-exporter.service
-# TODO start plotter service
+sudo systemctl start plotter.service
 
