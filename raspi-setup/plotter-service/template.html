@@ -8,19 +8,52 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <style>
+        body {
+            font-family: Futura, Arial, Helvetica, sans-serif;
+        }
+
+        .row {
+            text-align: center;
+        }
+        .row div {
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Norff House</h1>
 
+    <div class="row">
+        <div>
+            <h5>5m Avg.</h5>
+            <div>_LAST_5_MIN_AVG_ W</div>
+        </div>
+        <div>
+            <h5>15m Avg.</h5>
+            <div>_LAST_15_MIN_AVG_ W</div>
+        </div>
+        <div>
+            <h5>30m Avg.</h5>
+            <div>_LAST_30_MIN_AVG_ W</div>
+        </div>
+    </div>
+
     <h3>Current Day in Hours</h3>
     <div class="ct-chart ct-golden-section" id="chart-day-by-hour"></div>
 
-    <h3>Last 7 Days</h3>
-    <div class="ct-chart ct-golden-section" id="chart-last-7-days"></div>
-
     <h3>Last Full Week</h3>
     <div class="ct-chart ct-golden-section" id="chart-last-full-week"></div>
+
+    <h3>Last 31 Days</h3>
+    <div class="ct-chart ct-golden-section" id="chart-last-31-days"></div>
     
+    <h3>Weeks of Current Month</h3>
+    <div class="ct-chart ct-golden-section" id="chart-current-month-by-week"></div>
+
+    <h3>Months of Current Year</h3>
+    <div class="ct-chart ct-golden-section" id="chart-current-year-by-month"></div>
 
     <script>
         function convertSQLToChartData(rawData) {
@@ -46,13 +79,21 @@
         const graphOfDayByHour = convertSQLToChartData(graphOfDayByHourRawData);
         new Chartist.Line('#chart-day-by-hour', graphOfDayByHour);
 
-        const graphOfLast7DaysByDayRawData = '_GRAPH_OF_LAST_7_DAYS_BY_DAY_';
-        const graphOfLast7DaysByDay = convertSQLToChartData(graphOfLast7DaysByDayRawData);
-        new Chartist.Line('#chart-last-7-days', graphOfLast7DaysByDay);
-
         const graphOfLastFullWeekDaysRawData = '_GRAPH_OF_LAST_FULL_WEEKDAYS_';
         const graphOfLastFullWeekDays = convertSQLToChartData(graphOfLastFullWeekDaysRawData);
         new Chartist.Line('#chart-last-full-week', graphOfLastFullWeekDays);
+
+        const graphOfLast31DaysRawData = '_GRAPH_OF_LAST_31_DAYS_';
+        const graphOfLast31Days = convertSQLToChartData(graphOfLast31DaysRawData);
+        new Chartist.Line('#chart-last-31-days', graphOfLast31Days);
+
+        const graphOfCurrentMonthByWeekRawData = '_CURRENT_MONTH_BY_WEEK_';
+        const graphOfCurrentMonthByWeek = convertSQLToChartData(graphOfCurrentMonthByWeekRawData);
+        new Chartist.Line('#chart-current-month-by-week', graphOfCurrentMonthByWeek);
+
+        const graphOfCurrentYearByMonthRawData = '_CURRENT_YEAR_BY_MONTH_';
+        const graphOfCurrentYearByMonth = convertSQLToChartData(graphOfCurrentYearByMonthRawData);
+        new Chartist.Line('#chart-current-year-by-month', graphOfCurrentYearByMonth);
     </script>
 </body>
 </html>
