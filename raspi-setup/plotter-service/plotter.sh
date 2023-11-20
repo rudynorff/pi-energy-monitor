@@ -6,6 +6,9 @@ rm -f ./copy.html
 cp ./telemetry.sqlite ./copy.sqlite
 
 
+CURTIME=$(date +"%T")
+sed -i "s@_CURTIME_@$CURTIME@g" ./index.html
+
 LAST_5_MIN_AVG=$(sqlite3 ./copy.sqlite "select avgpower from (select datetime((strftime('%s', timestamp) / 300) * 300, 'unixepoch') intervals, ROUND(AVG(value), 1) avgpower from telemetry where date(timestamp) = date('now') group by intervals order by intervals DESC LIMIT 1);" | tr -d '\n')
 sed -i "s@_LAST_5_MIN_AVG_@$LAST_5_MIN_AVG@g" ./index.html
 

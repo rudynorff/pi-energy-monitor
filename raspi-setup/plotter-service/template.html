@@ -11,6 +11,8 @@
     <style>
         body {
             font-family: Futura, Arial, Helvetica, sans-serif;
+            background: #050F3F;
+            color: #68397F;
         }
 
         .row {
@@ -20,10 +22,26 @@
             display: inline-block;
             text-align: center;
         }
+
+        .ct-grid {
+            stroke: #292665;
+            stroke-width: 1px;
+            stroke-dasharray: 6px;
+        }
+
+        .ct-label {
+            color: #472D7A
+        }
+
+        .ct-series-a .ct-line, .ct-series-a  .ct-point {
+            stroke: #E17B7A; /* #E48F58 #F1A567 #EFAB67 #EFC469 #F0DF73 */
+        }
     </style>
 </head>
 <body>
     <h1>Norff House</h1>
+
+    <div class="row">_CURTIME_</div>
 
     <div class="row">
         <div>
@@ -77,23 +95,23 @@
 
         const graphOfDayByHourRawData = '_GRAPH_OF_DAY_BY_HOUR_';
         const graphOfDayByHour = convertSQLToChartData(graphOfDayByHourRawData);
-        new Chartist.Line('#chart-day-by-hour', graphOfDayByHour);
+        new Chartist.Line('#chart-day-by-hour', graphOfDayByHour, { showArea: true, showLine: true, showPoint: false });
 
         const graphOfLastFullWeekDaysRawData = '_GRAPH_OF_LAST_FULL_WEEKDAYS_';
         const graphOfLastFullWeekDays = convertSQLToChartData(graphOfLastFullWeekDaysRawData);
-        new Chartist.Line('#chart-last-full-week', graphOfLastFullWeekDays);
+        new Chartist.Line('#chart-last-full-week', graphOfLastFullWeekDays, { showArea: true, showLine: true, showPoint: false });
 
         const graphOfLast31DaysRawData = '_GRAPH_OF_LAST_31_DAYS_';
         const graphOfLast31Days = convertSQLToChartData(graphOfLast31DaysRawData);
-        new Chartist.Line('#chart-last-31-days', graphOfLast31Days);
+        new Chartist.Line('#chart-last-31-days', graphOfLast31Days, { showArea: true, showLine: true, showPoint: false });
 
         const graphOfCurrentMonthByWeekRawData = '_CURRENT_MONTH_BY_WEEK_';
         const graphOfCurrentMonthByWeek = convertSQLToChartData(graphOfCurrentMonthByWeekRawData);
-        new Chartist.Line('#chart-current-month-by-week', graphOfCurrentMonthByWeek);
+        new Chartist.Line('#chart-current-month-by-week', graphOfCurrentMonthByWeek, { showArea: true, showLine: true, showPoint: false });
 
         const graphOfCurrentYearByMonthRawData = '_CURRENT_YEAR_BY_MONTH_';
         const graphOfCurrentYearByMonth = convertSQLToChartData(graphOfCurrentYearByMonthRawData);
-        new Chartist.Line('#chart-current-year-by-month', graphOfCurrentYearByMonth);
+        new Chartist.Line('#chart-current-year-by-month', graphOfCurrentYearByMonth, { showArea: true, showLine: true, showPoint: false });
     </script>
 </body>
 </html>
